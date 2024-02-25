@@ -6,8 +6,8 @@ const Navbar = () => {
             <Link to={'/'} style={styling.logo}>FOODABLE</Link>
             <div style={styling.nav_right}>
                 <Link to={'/'} style={styling.nav_right_items}>Home</Link>
-                <Link to={'/login'} style={styling.nav_right_items}>Login</Link>
-                <Link to={'/signup'} style={styling.nav_right_items}>Sign up</Link>
+                <Link to={'/loginuser'} style={styling.nav_right_items}>Login</Link>
+                <Link to={'/createuser'} style={styling.nav_right_items}>Sign up</Link>
             </div>
         </div>
     )
