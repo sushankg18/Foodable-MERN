@@ -14,8 +14,6 @@ const styling = {
         display : 'flex',
         justifyContent : "center",
         padding : '.6rem 1rem',
-        position : "fixed",
-        bottom : "0",
     }
 }
 export default Footer

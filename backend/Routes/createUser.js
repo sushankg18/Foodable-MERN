@@ -1,10 +1,15 @@
+// BELOW THREEE ARE THE IMPORTANT TO REQUIRE
 const express = require('express');
 const router = express.Router();
 const user = require('../models/user')
+
+// BELOW GIVEN REQUIRES ARE JUST FOR VALIDATION AND SECURING PASSWORD FROM HASHING.
 const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
 const JwtSecret = 'ksuiIenfgp$344nfd222222';
 const jwt = require('jsonwebtoken')
+
+// THIS PART IS FOR CREATING A NEW USER OR A SIGN UP PAGE
 router.post('/createuser', [
     body('email', "INCORRECT EMAIL").isEmail(),
     body('name', "INCORRECT NAME").isLength({ min: 5 }),
@@ -35,6 +40,8 @@ router.post('/createuser', [
 });
 
 
+
+// THIS PART IS FOR LOGGING IN A EXISTED USER VIA VALIDATION AND COMPARING PASSWORD USING BCRYPT.COMPARE
 router.post('/loginuser',
     [
         body('email', "INCORRECT EMAIL").isEmail(),
@@ -73,6 +80,8 @@ router.post('/loginuser',
         }
     })
 
+
+// HERE WE EXPORT THE ROUTER, BELOW EXPORTED ROUTER EXPORTS BOTH ROUTES CREATEUSER AS WELL LOGINUSER.
 module.exports = router;
 
 

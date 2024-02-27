@@ -22,7 +22,7 @@ const navigate = useNavigate();
       alert("ENTER VALID CREDENTIALS");
     }
     if(json.success){
-      console.log(json.AuthToken);
+      localStorage.setItem("AuthToken",json.AuthToken);
       navigate('/')
     }
   }

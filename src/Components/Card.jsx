@@ -1,15 +1,15 @@
 import React from 'react'
 import { IoCartOutline } from "react-icons/io5";
 
-const Card = () => {
+const Card = ({image, desc, title, }) => {
     const btns = new Array(5).fill(1)
     return (
         <div style={styling.main}>
             <div style={styling.image_div}>
-                <img style={styling.image} src='https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' />
+                <img style={styling.image} src={image} />
             </div>
             <div style={styling.text}>
-                <p style={styling.text.p1}>BURGER</p>
+                <p style={styling.text.p1}>{title}</p>
                 <div style={styling.text.div}>
                     <p>₹79</p>
 
