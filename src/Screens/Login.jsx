@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom'
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-
+  const [userEmail, setUserEmail] = useState('')
 const navigate = useNavigate();
   const handleSubmit = async(e) => {
     e.preventDefault();
@@ -22,7 +22,7 @@ const navigate = useNavigate();
       alert("ENTER VALID CREDENTIALS");
     }
     if(json.success){
-      console.log(json.user)
+      console.log(json.AuthToken);
       navigate('/')
     }
   }
