@@ -1,8 +1,9 @@
 import React from 'react'
 import { IoCartOutline } from "react-icons/io5";
 
-const Card = ({image, desc, title, }) => {
+const Card = ({image, desc, title,options }) => {
     const btns = new Array(5).fill(1)
+    let priceOptions = Object.keys(options)
     return (
         <div style={styling.main}>
             <div style={styling.image_div}>
@@ -25,9 +26,11 @@ const Card = ({image, desc, title, }) => {
                         </select>
 
                         <select>
-                            <option>Small</option>
-                            <option>Medium</option>
-                            <option>Large</option>
+                            {
+                                priceOptions.map((data)=>{
+                                    return <option value={data} key={data}>{data}</option>
+                                })
+                            }
                         </select>
                     </div>
 

@@ -28,7 +28,7 @@ const Home = () => {
           <div>
             <h1>{item.CategoryName}</h1>
             <hr style={{margin : "1rem"}} />
-            <div style={{display: "flex", gap : "1rem", flexWrap : 'wrap', padding: "1rem"}}>
+            <div style={{display: "flex", gap : "1rem", justifyContent : 'space-around', flexWrap : 'wrap', padding: "1rem"}}>
               {
                 foodItems.filter((data) => data.CategoryName === item.CategoryName)
                   .map(filterItem => {
@@ -37,6 +37,7 @@ const Home = () => {
                         image={filterItem.img}
                         title={filterItem.name}
                         desc={filterItem.description}
+                        options={filterItem.options[0]}
                       />
                     )
                   })
@@ -53,7 +54,7 @@ const Home = () => {
 
 const styling = {
   main: {
-    padding: "1rem 2rem"
+    padding: "2rem"
   }
 }
 export default Home
