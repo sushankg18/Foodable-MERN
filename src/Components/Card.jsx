@@ -1,9 +1,9 @@
 import React from 'react'
 import { IoCartOutline } from "react-icons/io5";
 
-const Card = ({image, desc, title,options }) => {
-    const btns = new Array(5).fill(1)
+const Card = ({ image, desc, title, options }) => {
     let priceOptions = Object.keys(options)
+    const btns = new Array(5).fill(1)
     return (
         <div style={styling.main}>
             <div style={styling.image_div}>
@@ -18,8 +18,8 @@ const Card = ({image, desc, title,options }) => {
 
                         <select>
                             {
-                                btns.map((i, idx)=>(
-                                    <option>{idx + 1}</option>
+                                btns.map((i, idx) => (
+                                    <option key={idx} value={idx + 1}>{idx + 1}</option>
                                 ))
                             }
 
@@ -27,7 +27,7 @@ const Card = ({image, desc, title,options }) => {
 
                         <select>
                             {
-                                priceOptions.map((data)=>{
+                                priceOptions.map((data) => {
                                     return <option value={data} key={data}>{data}</option>
                                 })
                             }
@@ -81,15 +81,15 @@ const styling = {
             gap: '1rem',
             fontSize: "1rem",
             width: "fit-content",
-            cursor : 'pointer'
+            cursor: 'pointer'
         },
         div: {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            div : {
+            div: {
                 display: "flex",
-                gap : '1rem'
+                gap: '1rem'
             }
         }
     }
